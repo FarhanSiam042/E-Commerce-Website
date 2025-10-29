@@ -1,0 +1,19 @@
+.App {
+  min-height: 100vh;
+}
+
+.home {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.home p {
+  color: #666;
+  font-size: 18px;
+}
