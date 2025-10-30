@@ -1,7 +1,9 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
   display: flex;
+  align-items: center;
+  padding: 0 50px;
 }
 
 .hero-left {
@@ -9,9 +11,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  padding-left: 180px;
+  gap: 10px;
+  padding-left: 100px;
   line-height: 1.1;
+  max-width: 50%;
 }
 
 .hero-left h2 {
@@ -33,8 +36,9 @@
   gap: 20px;
 }
 
-.hand-icon img {
+.hero-hand-icon img {
   width: 105px;
+  height: auto;
 }
 
 .hero-latest-btn {
@@ -51,6 +55,17 @@
   font-size: 22px;
   font-weight: 500;
   cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-latest-btn:hover {
+  background: #e63939;
+}
+
+.hero-latest-btn img {
+  width: 20px;
+  height: 20px;
 }
 
 .hero-right {
@@ -58,9 +73,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .hero-right img {
   width: 100%;
-  max-width: 610px;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+    padding: 50px 20px;
+  }
+
+  .hero-left {
+    padding-left: 0;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-left p {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-left p {
+    font-size: 45px;
+  }
+
+  .hero-left h2 {
+    font-size: 22px;
+  }
+
+  .hero-latest-btn {
+    width: 280px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .hero-hand-icon img {
+    width: 80px;
+  }
 }
