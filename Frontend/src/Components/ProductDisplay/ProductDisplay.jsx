@@ -5,17 +5,43 @@ import star_dull_icon from "../Assets/star_dull_icon.png";
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const [selectedImage, setSelectedImage] = React.useState(product.image);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
         <div className="productdisplay-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <img
+            src={product.image}
+            alt=""
+            onClick={() => handleImageClick(product.image)}
+            className={selectedImage === product.image ? "active" : ""}
+          />
+          <img
+            src={product.image}
+            alt=""
+            onClick={() => handleImageClick(product.image)}
+            className={selectedImage === product.image ? "active" : ""}
+          />
+          <img
+            src={product.image}
+            alt=""
+            onClick={() => handleImageClick(product.image)}
+            className={selectedImage === product.image ? "active" : ""}
+          />
+          <img
+            src={product.image}
+            alt=""
+            onClick={() => handleImageClick(product.image)}
+            className={selectedImage === product.image ? "active" : ""}
+          />
         </div>
         <div className="productdisplay-img">
-          <img className="productdisplay-main-img" src={product.image} alt="" />
+          <img className="productdisplay-main-img" src={selectedImage} alt="" />
         </div>
       </div>
       <div className="productdisplay-right">
@@ -29,8 +55,12 @@ const ProductDisplay = (props) => {
           <p>(122)</p>
         </div>
         <div className="productdisplay-right-price">
-          <div className="productdisplay-right-price-old">${product.price}</div>
-          <div className="productdisplay-right-price-new">${product.price}</div>
+          <div className="productdisplay-right-price-old">
+            ${product.old_price || product.price}
+          </div>
+          <div className="productdisplay-right-price-new">
+            ${product.new_price || product.price}
+          </div>
         </div>
         <div className="productdisplay-right-description">
           A Lightweight, knitted fabric that is breathable and comfortable for

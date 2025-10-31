@@ -3,13 +3,13 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Shop } from "./Pages/Shop";
-// import ShopCategory from "./Pages/ShopCategory";
+import ShopCategory from "./Pages/ShopCategory";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignup from "./Pages/LoginSignup";
-// import men_banner from "./Components/Assets/banner_mens.png";
-// import women_banner from "./Components/Assets/banner_women.png";
-// import kid_banner from "./Components/Assets/banner_kids.png";
+import men_banner from "./Components/Assets/banner_mens.png";
+import women_banner from "./Components/Assets/banner_women.png";
+import kid_banner from "./Components/Assets/banner_kids.png";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} />
-          {/* <Route
+          <Route
             path="/mens"
             element={<ShopCategory banner={men_banner} category="men" />}
           />
@@ -29,7 +29,7 @@ function App() {
           <Route
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
-          /> */}
+          />
           <Route path="/product" element={<Product />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
